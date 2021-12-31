@@ -1,8 +1,4 @@
-import Header from './header';
-
-const Bases = {
-  Header,
-};
+const Bases = {};
 
 export default Bases;
-export { Header };
+export {};

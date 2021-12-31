@@ -1,11 +1,5 @@
-import BannerMain from "./banner_main";
-
-const Organisms = {
-    BannerMain,
-};
+const Organisms = {};
 
 export default Organisms;
 
-export {
-    BannerMain,
-};
+export {};
