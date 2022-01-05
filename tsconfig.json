@@ -9,6 +9,8 @@
     "baseUrl": ".",
     "paths": {
       "Actions": ["src/redux/actions/index.ts"],
+      "Actions/*": ["src/redux/actions/*"],
+      "Types/*": ["src/redux/types/*"],
       "Bases": ["src/components/base/index.ts"],
       "Templates": ["src/components/templates/index.ts"],
       "Pages": ["pages"],

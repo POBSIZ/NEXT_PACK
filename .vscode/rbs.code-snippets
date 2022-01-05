@@ -4,7 +4,6 @@
 		"body": [
 			"import React, { useEffect, useState, useRef } from 'react';",
 			"import styled, { css } from 'styled-components';",
-			"import { Link, Route, BrowserRouter, Routes, useNavigate, useParams, useLocation } from 'react-router-dom';",
 			"import PropTypes from 'prop-types';",
 			"import { useSelector, useDispatch, RootStateOrAny } from 'react-redux';",
 			"import Actions from 'Actions';",

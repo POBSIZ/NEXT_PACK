@@ -6,12 +6,10 @@ import type { AppProps } from 'next/app';
 import { Provider } from 'react-redux';
 import { CookiesProvider } from 'react-cookie';
 
-import { createStore } from 'redux';
-import rootReducer from '../src/redux/reducer/';
-import { composeWithDevTools } from 'redux-devtools-extension';
-
 import { persistStore } from 'redux-persist';
 import { PersistGate } from 'redux-persist/integration/react';
+
+import configureStore from 'src/redux/reducer/configureStore';
 
 import styled, {
   createGlobalStyle,
@@ -23,9 +21,8 @@ import GlobalStyle from 'StyleVars';
 import Head from 'next/head';
 
 import Layout from 'src/components/layout';
-import Bases, { Header } from 'Bases';
 
-const store = createStore(rootReducer, composeWithDevTools());
+const store: any = configureStore();
 
 const persistor = persistStore(store);
 

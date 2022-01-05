@@ -1,7 +1,7 @@
-import testAction from "./testAction";
+import testAction from './testAction';
 
 const Actions = {
-    test: testAction,
-}
+  test: testAction,
+};
 
 export default Actions;

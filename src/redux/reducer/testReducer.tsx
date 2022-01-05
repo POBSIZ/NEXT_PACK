@@ -1,24 +1,42 @@
-import Actions from '../actions';
+import { createReducer } from 'typesafe-actions';
 
-const initState = {
-  value: 0,
+import { testAction, testState } from '../types/testTypes';
+import Actions from 'Actions';
+import {
+  INCREMENT,
+  DECREMENT,
+  GET_CHECK_SESSION_SUCCESS,
+  GET_TEST_SUCCESS,
+} from 'Actions/testAction';
+
+const initialState: any = {
+  num: 0,
+  name: '',
+  test: null,
 };
 
-const test = (state = initState, action: any) => {
-  switch (action.type) {
-    case Actions.test.constants.INCREMENT:
-      return {
-        ...state,
-        value: action.payload,
-      };
-    case Actions.test.constants.DECREMENT:
-      return {
-        ...state,
-        value: action.payload,
-      };
-    default:
-      return state;
-  }
-};
+//createReducer는 reducer를 쉽게 작성할 수 있도록 하는 모듈이며
+//타입 오류를 방지 할 수 있습니다.
+const reducer = createReducer<testState, testAction>(initialState, {
+  [INCREMENT]: (state, action) => ({
+    ...state,
+    num: action.payload,
+  }),
 
-export default test;
+  [DECREMENT]: (state, action) => ({
+    ...state,
+    num: action.payload,
+  }),
+
+  [GET_CHECK_SESSION_SUCCESS]: (state, action) => ({
+    ...state,
+    name: action.payload.name,
+  }),
+
+  [GET_TEST_SUCCESS]: (state, action) => ({
+    ...state,
+    test: action.payload.test,
+  }),
+});
+
+export default reducer;
